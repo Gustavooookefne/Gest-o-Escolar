@@ -67,7 +67,7 @@ public class AlunoRepository {
         return alunos;
     }
 
-    public Aluno listarPorId(int id)throws SQLException{
+    public Aluno listarPorId(long id)throws SQLException{
            Aluno aluno = null;
 
            String sql = """
@@ -99,7 +99,7 @@ public class AlunoRepository {
         return aluno;
     }
 
-    public Aluno atualizarAluno(Aluno aluno, int id)throws SQLException{
+    public Aluno atualizarAluno(Aluno aluno, long id)throws SQLException{
             String sql = """
                     UPDATE aluno
                     SET
@@ -125,7 +125,7 @@ public class AlunoRepository {
         return aluno;
     }
 
-    public void deletarAluno(int id)throws SQLException{
+    public void deletarAluno(long id)throws SQLException{
         String sql = """
                 DELETE FROM aluno
                 WHERE id = ?
