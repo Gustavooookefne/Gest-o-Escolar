@@ -19,6 +19,10 @@ public class Turma {
         this.professor = professor;
     }
 
+    public Turma() {
+
+    }
+
     public long getId() {
         return id;
     }
