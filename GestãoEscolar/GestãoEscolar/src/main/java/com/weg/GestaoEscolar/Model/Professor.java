@@ -19,6 +19,10 @@ public class Professor {
         this.disiplina = disiplina;
     }
 
+    public Professor() {
+
+    }
+
     public long getId() {
         return id;
     }
