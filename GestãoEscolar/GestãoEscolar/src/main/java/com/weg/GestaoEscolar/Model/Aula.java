@@ -3,12 +3,12 @@ package com.weg.GestaoEscolar.Model;
 import java.time.LocalDate;
 
 public class Aula {
-    private int id;
+    private long id;
     private Turma turma;
     private LocalDate dataHora;
     private String assuntos;
 
-    public Aula(int id, Turma turma, LocalDate dataHora, String assuntos) {
+    public Aula(long id, Turma turma, LocalDate dataHora, String assuntos) {
         this.id = id;
         this.turma = turma;
         this.dataHora = dataHora;
@@ -21,11 +21,11 @@ public class Aula {
         this.assuntos = assuntos;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

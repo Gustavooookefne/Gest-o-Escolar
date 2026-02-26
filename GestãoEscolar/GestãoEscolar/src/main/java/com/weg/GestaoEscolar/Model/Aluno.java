@@ -1,13 +1,13 @@
 package com.weg.GestaoEscolar.Model;
 
 public class Aluno {
-    private int id;
+    private long id;
     private String nome;
     private String email;
     private int matricula;
     private String dataNacimento;
 
-    public Aluno(int id, String nome, String email, int matricula, String dataNacimento) {
+    public Aluno(long id, String nome, String email, int matricula, String dataNacimento) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -22,11 +22,11 @@ public class Aluno {
         this.dataNacimento = dataNacimento;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

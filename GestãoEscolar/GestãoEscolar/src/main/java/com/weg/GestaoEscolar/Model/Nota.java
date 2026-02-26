@@ -1,12 +1,12 @@
 package com.weg.GestaoEscolar.Model;
 
 public class Nota {
-    private int id;
+    private long id;
     private Aluno aluno;
     private Aula aula;
     private double nota;
 
-    public Nota(int id, Aluno aluno, Aula aula, double nota) {
+    public Nota(long id, Aluno aluno, Aula aula, double nota) {
         this.id = id;
         this.aluno = aluno;
         this.aula = aula;
@@ -19,11 +19,11 @@ public class Nota {
         this.nota = nota;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

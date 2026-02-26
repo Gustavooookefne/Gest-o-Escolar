@@ -1,11 +1,11 @@
 package com.weg.GestaoEscolar.Model;
 
 public class Curso {
-    private int id;
+    private long id;
     private String nomeCurso;
     private int codigo;
 
-    public Curso(int id, String nomeCurso, int codigo) {
+    public Curso(long id, String nomeCurso, int codigo) {
         this.id = id;
         this.nomeCurso = nomeCurso;
         this.codigo = codigo;
@@ -16,11 +16,11 @@ public class Curso {
         this.codigo = codigo;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

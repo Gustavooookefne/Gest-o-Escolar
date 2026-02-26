@@ -1,12 +1,12 @@
 package com.weg.GestaoEscolar.Model;
 
 public class Professor {
-    private int id;
+    private long id;
     private String nome;
     private String email;
     private String disiplina;
 
-    public Professor(int id, String nome, String email, String disiplina) {
+    public Professor(long id, String nome, String email, String disiplina) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -19,11 +19,11 @@ public class Professor {
         this.disiplina = disiplina;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
