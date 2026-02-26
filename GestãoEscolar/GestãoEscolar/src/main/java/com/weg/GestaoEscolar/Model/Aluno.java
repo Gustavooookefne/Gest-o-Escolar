@@ -61,4 +61,5 @@ public class Aluno {
     public void setDataNacimento(String dataNacimento) {
         this.dataNacimento = dataNacimento;
     }
+
 }
