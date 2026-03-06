@@ -1,4 +1,14 @@
 package com.weg.GestaoEscolar.Dtos.NotaDtos;
 
-public class NotaResponseDtos {
+import com.weg.GestaoEscolar.Model.Aluno;
+import com.weg.GestaoEscolar.Model.Aula;
+
+public record NotaResponseDtos (
+
+         long id,
+         Aluno aluno,
+         Aula aula,
+         double nota
+){
+
 }
