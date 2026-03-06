@@ -12,8 +12,7 @@ public class Curso {
     }
 
     public Curso(String nomeCurso, int codigo) {
-        this.nomeCurso = nomeCurso;
-        this.codigo = codigo;
+
     }
 
     public Curso() {
@@ -42,5 +41,8 @@ public class Curso {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public void getNomeCurso(Object nomeCurso) {
     }
 }
