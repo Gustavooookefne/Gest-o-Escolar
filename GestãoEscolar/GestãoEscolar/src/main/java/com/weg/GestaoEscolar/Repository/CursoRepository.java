@@ -125,4 +125,8 @@ public class CursoRepository {
 
         }
     }
+
+    public Curso atualizarCurso(Curso curso) {
+        return curso;
+    }
 }

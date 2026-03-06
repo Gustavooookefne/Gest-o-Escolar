@@ -10,7 +10,7 @@ public class AulaService {
     AulaRepository aulaRepository = new AulaRepository();
 
     public Aula cadastrarAlula(Aula aula)throws SQLException{
-        if(aula.getTurma().getId() == aula.getId()){
+        if(aula.getTurma() == null){
             throw new SQLException("Turma não foi cadastrada");
         }
         return aulaRepository.novaAulas(aula);
