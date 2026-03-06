@@ -10,7 +10,7 @@ public class AlunoService {
     AlunoRepository alunoRepository = new AlunoRepository();
 
 
-    
+
     public Aluno cadastrarAluno (Aluno aluno)throws SQLException{
         if(aluno.getNome().isEmpty()){
             throw new RuntimeException("Aluno não possui nome");
@@ -26,7 +26,7 @@ public class AlunoService {
         return alunos;
     }
 
-    public Aluno buscarAlunoPorId(int id)throws SQLException{
+    public Aluno buscarAlunoPorId(long id)throws SQLException{
            Aluno aluno = alunoRepository.listarPorId(id);
            if(aluno == null){
                throw new RuntimeException("A lista esta vazia");
@@ -34,7 +34,7 @@ public class AlunoService {
         return aluno;
     }
 
-    public Aluno atualizarAluno(Aluno aluno, int id)throws SQLException{
+    public Aluno atualizarAluno(Aluno aluno, long id)throws SQLException{
            Aluno alunos = alunoRepository.listarPorId(id);
            if(alunos == null){
                throw new RuntimeException("Aluno não encontrado");
@@ -43,7 +43,7 @@ public class AlunoService {
         return alunoRepository.atualizarAluno(alunos);
     }
 
-    public void deletarAluno(int id)throws SQLException{
+    public void deletarAluno(long id)throws SQLException{
         Aluno aluno = alunoRepository.listarPorId(id);
         if(aluno == null){
             throw new RuntimeException("Aluno não encontrado");

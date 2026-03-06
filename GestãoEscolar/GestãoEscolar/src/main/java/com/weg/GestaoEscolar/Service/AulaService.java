@@ -25,7 +25,7 @@ public class AulaService {
         return aulas;
     }
 
-    public Aula listarAulaPorId(int id)throws SQLException{
+    public Aula listarAulaPorId(long id)throws SQLException{
         Aula aula = aulaRepository.buscarPorId(id);
         if(aula == null){
             throw new RuntimeException("Lista esta vizia");
@@ -33,7 +33,7 @@ public class AulaService {
         return aula;
     }
 
-    public Aula atualizarAula(Aula aula, int id)throws SQLException{
+    public Aula atualizarAula(Aula aula, long id)throws SQLException{
         Aula aulas = aulaRepository.buscarPorId(id);
         if(aulas == null){
             throw new RuntimeException("Aula não encontrada");
@@ -41,7 +41,7 @@ public class AulaService {
         return aulaRepository.atualizarAulas(aula);
     }
 
-    public void deletarAula(int id)throws SQLException{
+    public void deletarAula(long id)throws SQLException{
         Aula aula = aulaRepository.buscarPorId(id);
         if(aula == null){
             throw new RuntimeException("Aula não encontrada");

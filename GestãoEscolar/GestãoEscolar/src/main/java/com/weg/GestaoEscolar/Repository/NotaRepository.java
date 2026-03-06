@@ -138,4 +138,8 @@ public class NotaRepository {
             psDEL.executeUpdate();
         }
     }
+
+    public Nota atualizarNota(Nota nota) {
+        return nota;
+    }
 }

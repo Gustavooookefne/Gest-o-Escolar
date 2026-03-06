@@ -24,7 +24,7 @@ public class CursoService {
         return cursos;
     }
 
-    public Curso listarPorId(int id)throws SQLException{
+    public Curso listarPorId(long id)throws SQLException{
            Curso curso = cursoRepository.buscarPorId(id);
            if(curso == null){
                throw new RuntimeException("lista esta vazia");
@@ -32,7 +32,7 @@ public class CursoService {
         return curso;
     }
 
-    public Curso atualizarTodosOsCursos(Curso curso, int id)throws SQLException{
+    public Curso atualizarTodosOsCursos(Curso curso, long id)throws SQLException{
            Curso cursos = cursoRepository.buscarPorId(id);
            if(cursos == null){
                throw new RuntimeException("Curso não encontrado");
@@ -40,7 +40,7 @@ public class CursoService {
             return cursoRepository.atualizarCurso(curso);
     }
 
-    public void deletarCurso(int id)throws SQLException{
+    public void deletarCurso(long id)throws SQLException{
         Curso curso = cursoRepository.buscarPorId(id);
         if(curso == null){
             throw new RuntimeException("Curso não encontrado");
