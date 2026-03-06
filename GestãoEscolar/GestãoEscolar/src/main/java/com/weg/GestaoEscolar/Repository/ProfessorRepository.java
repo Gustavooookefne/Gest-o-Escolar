@@ -120,4 +120,8 @@ public class ProfessorRepository {
             psDel.executeUpdate();
         }
     }
+
+    public Professor atualizarProfessor(Professor professor) {
+        return professor;
+    }
 }
