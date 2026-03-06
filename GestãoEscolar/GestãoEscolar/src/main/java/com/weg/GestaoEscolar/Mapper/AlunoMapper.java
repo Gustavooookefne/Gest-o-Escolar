@@ -9,4 +9,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class AlunoMapper {
 
+    public Aluno paraEntidade (AlunoRequestDtos alunoRequestDtos){
+
+        return new Aluno(
+                alunoRequestDtos.nome(),
+                alunoRequestDtos.email(),
+                alunoRequestDtos.matricula(),
+                alunoRequestDtos.dataNacimento()
+        );
+
+    }
+
+    public Aluno paraDtos (Aluno aluno){
+
+        return new Aluno(
+
+                aluno.getId(),
+                aluno.getNome(),
+                aluno.getEmail(),
+                aluno.getMatricula(),
+                aluno.getDataNacimento()
+        );
+    }
+
 }
