@@ -1,4 +1,10 @@
 package com.weg.GestaoEscolar.Dtos.CursoDtos;
 
-public class CursoResponseDtos {
+public record CursoResponseDtos (
+
+         long id,
+         String nomeCurso,
+         int codigo
+){
+
 }
