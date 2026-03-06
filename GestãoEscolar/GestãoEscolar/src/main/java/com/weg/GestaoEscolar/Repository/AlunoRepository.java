@@ -99,7 +99,7 @@ public class AlunoRepository {
         return aluno;
     }
 
-    public Aluno atualizarAluno(Aluno aluno, long id)throws SQLException{
+    public Aluno atualizarAluno(Aluno aluno, int idOriginal)throws SQLException{
             String sql = """
                     UPDATE aluno
                     SET
@@ -116,7 +116,7 @@ public class AlunoRepository {
              psUPD.setString(2, aluno.getEmail());
              psUPD.setInt(3, aluno.getMatricula());
              psUPD.setString(4, aluno.getDataNacimento());
-             psUPD.setLong(5, id);
+             psUPD.setLong(5, idOriginal);
 
              psUPD.executeUpdate();
         }
@@ -135,5 +135,9 @@ public class AlunoRepository {
             psDel.setLong(1, id);
             psDel.executeUpdate();
         }
+    }
+
+    public Aluno atualizarAluno(Aluno alunos) {
+        return alunos;
     }
 }

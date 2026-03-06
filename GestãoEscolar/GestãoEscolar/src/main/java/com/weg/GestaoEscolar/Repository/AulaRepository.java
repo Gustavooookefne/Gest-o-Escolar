@@ -128,4 +128,8 @@ public class AulaRepository {
             psDel.executeUpdate();
         }
     }
+
+    public Aula atualizarAulas(Aula aula) {
+        return aula;
+    }
 }
