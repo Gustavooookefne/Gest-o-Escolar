@@ -64,5 +64,6 @@ public class NotaCurso {
 
                 throw new RuntimeException("Nota não encontrada");
             }
+            notaRepository.deletarNota(id);
     }
 }

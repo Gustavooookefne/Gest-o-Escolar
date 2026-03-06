@@ -30,7 +30,7 @@ public class ProfessorService {
         return professors;
     }
 
-    public Professor listarProfessorPorId(int id) throws SQLException{
+    public Professor listarProfessorPorId(Long id) throws SQLException{
 
            Professor professor = professorRepository.buscarPorId(id);
 
@@ -42,7 +42,7 @@ public class ProfessorService {
         return professor;
     }
 
-    public Professor atualizarProfessor(Professor professor, int id) throws SQLException{
+    public Professor atualizarProfessor(Professor professor, Long id) throws SQLException{
 
            Professor professors = professorRepository.buscarPorId(id);
 
@@ -53,7 +53,7 @@ public class ProfessorService {
         return professorRepository.atualizarProfessor(professor);
     }
 
-    public void deletarProfessor(int id) throws SQLException{
+    public void deletarProfessor(Long id) throws SQLException{
 
            Professor professor = professorRepository.buscarPorId(id);
 

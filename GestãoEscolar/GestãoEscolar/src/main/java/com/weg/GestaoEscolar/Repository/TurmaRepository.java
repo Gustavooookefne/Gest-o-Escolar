@@ -140,4 +140,8 @@ public class TurmaRepository {
             psDel.executeUpdate();
         }
     }
+
+    public Turma atualizarTurma(Turma turma) {
+        return turma;
+    }
 }
