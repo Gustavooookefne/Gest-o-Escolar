@@ -1,5 +1,8 @@
 package com.weg.GestaoEscolar.Service;
 
+import com.weg.GestaoEscolar.Dtos.AlunoDtos.AlunoRequestDtos;
+import com.weg.GestaoEscolar.Dtos.AulaDtos.AulaRequestDtos;
+import com.weg.GestaoEscolar.Dtos.AulaDtos.AulaResponseDtos;
 import com.weg.GestaoEscolar.Model.Aula;
 import com.weg.GestaoEscolar.Repository.AulaRepository;
 import org.springframework.stereotype.Service;
@@ -66,14 +69,14 @@ public class AulaService {
     }
 
     public void deletarAula(long id) {
-        try {
-            Aula aula = aulaRepository.buscarPorId(id);
-            if (aula == null) {
-                throw new RuntimeException("Impossível deletar: Aula não encontrada.");
-            }
-            aulaRepository.deletarAulas(id);
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao deletar a aula de ID: " + id);
-        }
+
+    }
+
+    public AulaResponseDtos cadastrarAula(AlunoRequestDtos alunoRequestDtos) {
+        return null;
+    }
+
+    public AulaResponseDtos atualizarAula(AulaRequestDtos aulaRequestDtos, int id) {
+        return null;
     }
 }
