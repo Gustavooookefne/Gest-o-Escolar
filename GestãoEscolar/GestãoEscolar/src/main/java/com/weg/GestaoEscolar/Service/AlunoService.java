@@ -2,54 +2,80 @@ package com.weg.GestaoEscolar.Service;
 
 import com.weg.GestaoEscolar.Model.Aluno;
 import com.weg.GestaoEscolar.Repository.AlunoRepository;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Service
 public class AlunoService {
-    AlunoRepository alunoRepository = new AlunoRepository();
 
+    private final AlunoRepository alunoRepository;
 
+    public AlunoService(AlunoRepository alunoRepository) {
+        this.alunoRepository = alunoRepository;
+    }
 
-    public Aluno cadastrarAluno (Aluno aluno)throws SQLException{
-        if(aluno.getNome().isEmpty()){
-            throw new RuntimeException("Aluno não possui nome");
+    public Aluno cadastrarAluno(Aluno aluno) {
+        try {
+            if (aluno.getNome() == null || aluno.getNome().isEmpty()) {
+                throw new IllegalArgumentException("Aluno não possui nome");
+            }
+
+            return alunoRepository.novoAluno(aluno);
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao cadastrar aluno: " + e.getMessage());
         }
-        return alunoRepository.novoAluno(aluno);
     }
 
-    public List<Aluno> listarTodosOsAlunos()throws SQLException{
-           List<Aluno>alunos = alunoRepository.listarTodosOsAlunos();
-           if(alunos.isEmpty()){
-           throw new RuntimeException("A lista esta vazia");
-           }
-        return alunos;
-    }
-
-    public Aluno buscarAlunoPorId(long id)throws SQLException{
-           Aluno aluno = alunoRepository.listarPorId(id);
-           if(aluno == null){
-               throw new RuntimeException("A lista esta vazia");
-           }
-        return aluno;
-    }
-
-    public Aluno atualizarAluno(Aluno aluno, long id)throws SQLException{
-           Aluno alunos = alunoRepository.listarPorId(id);
-           if(alunos == null){
-               throw new RuntimeException("Aluno não encontrado");
-           }
-
-        return alunoRepository.atualizarAluno(alunos);
-    }
-
-    public void deletarAluno(long id)throws SQLException{
-        Aluno aluno = alunoRepository.listarPorId(id);
-        if(aluno == null){
-            throw new RuntimeException("Aluno não encontrado");
+    public List<Aluno> listarTodosOsAlunos() {
+        try {
+            List<Aluno> alunos = alunoRepository.listarTodosOsAlunos();
+            if (alunos.isEmpty()) {
+                throw new RuntimeException("A lista está vazia");
+            }
+            return alunos;
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar alunos.");
         }
-        alunoRepository.deletarAluno(id);
+    }
+
+    public Aluno buscarAlunoPorId(long id) {
+        try {
+            Aluno aluno = alunoRepository.listarPorId(id);
+            if (aluno == null) {
+                throw new RuntimeException("Aluno não encontrado com o ID: " + id);
+            }
+            return aluno;
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao buscar aluno.");
+        }
+    }
+
+    public Aluno atualizarAluno(Aluno aluno, long id) {
+        try {
+            Aluno alunoExistente = alunoRepository.listarPorId(id);
+            if (alunoExistente == null) {
+                throw new RuntimeException("Aluno não encontrado para atualização");
+            }
+
+            alunoExistente.setNome(aluno.getNome());
+
+            return alunoRepository.atualizarAluno(alunoExistente);
+        } catch (SQLException e) {
+            throw new RuntimeException("Ocorreu um erro ao atualizar o aluno.");
+        }
+    }
+
+    public void deletarAluno(long id) {
+        try {
+            Aluno aluno = alunoRepository.listarPorId(id);
+            if (aluno == null) {
+                throw new RuntimeException("Aluno não encontrado para exclusão");
+            }
+            alunoRepository.deletarAluno(id);
+        } catch (SQLException e) {
+            throw new RuntimeException("Ocorreu um erro ao deletar o aluno de ID " + id);
+        }
     }
 }
-
-
