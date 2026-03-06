@@ -142,4 +142,8 @@ public class NotaRepository {
     public Nota atualizarNota(Nota nota) {
         return nota;
     }
+
+    public List<Nota> listarNota(int alunoId) {
+        return List.of();
+    }
 }
