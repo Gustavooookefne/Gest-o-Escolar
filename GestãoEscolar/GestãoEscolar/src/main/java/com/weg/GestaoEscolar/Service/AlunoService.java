@@ -1,5 +1,7 @@
 package com.weg.GestaoEscolar.Service;
 
+import com.weg.GestaoEscolar.Dtos.AlunoDtos.AlunoRequestDtos;
+import com.weg.GestaoEscolar.Dtos.AlunoDtos.AlunoResponseDtos;
 import com.weg.GestaoEscolar.Model.Aluno;
 import com.weg.GestaoEscolar.Repository.AlunoRepository;
 import org.springframework.stereotype.Service;
@@ -77,5 +79,13 @@ public class AlunoService {
         } catch (SQLException e) {
             throw new RuntimeException("Ocorreu um erro ao deletar o aluno de ID " + id);
         }
+    }
+
+    public AlunoResponseDtos cadastrarAluno(AlunoRequestDtos alunoRequestDtos) {
+        return null;
+    }
+
+    public AlunoResponseDtos atualizarAluno(AlunoRequestDtos alunoRequestDtos, int id) {
+        return null;
     }
 }
