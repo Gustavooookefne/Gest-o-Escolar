@@ -1,4 +1,11 @@
 package com.weg.GestaoEscolar.Dtos.ProfessorDtos;
 
-public class ProfessorRequestDtos {
+public record ProfessorRequestDtos (
+
+         String nome,
+         String email,
+         String disiplina
+
+){
+
 }
