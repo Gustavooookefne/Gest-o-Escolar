@@ -1,5 +1,8 @@
 package com.weg.GestaoEscolar.Service;
 
+import com.weg.GestaoEscolar.Dtos.AlunoDtos.AlunoRequestDtos;
+import com.weg.GestaoEscolar.Dtos.CursoDtos.CursoRequestDtos;
+import com.weg.GestaoEscolar.Dtos.CursoDtos.CursoResponseDtos;
 import com.weg.GestaoEscolar.Model.Curso;
 import com.weg.GestaoEscolar.Repository.CursoRepository;
 import org.springframework.stereotype.Service;
@@ -78,5 +81,13 @@ public class CursoService {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao deletar o curso de ID " + id);
         }
+    }
+
+    public Curso atualizarCurso(CursoRequestDtos cursoRequestDtos, int id) {
+        return null;
+    }
+
+    public CursoResponseDtos cadastrarCurso(AlunoRequestDtos alunoRequestDtos) {
+        return null;
     }
 }
